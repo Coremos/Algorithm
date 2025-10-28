@@ -8,13 +8,12 @@ int solution(vector<int> d, int budget)
 {
     int answer = 0;
     int index = 0;
+    int size = d.size();
     
     sort(d.begin(), d.end());
     
-    while (budget > 0)
+    while (index < size && budget >= d[index])
     {
-        if (d[index] > budget || index >= d.size()) break;
-        
         budget -= d[index++];
         answer++;
     }
